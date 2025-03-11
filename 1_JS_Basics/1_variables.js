@@ -78,7 +78,7 @@ console.log('The value of the variable primitive is: ' + primitive);
 // All your efforts would be in vain. So what's the Catch 22? No need to 
 // change them, simply _replace_ them.
 
-primitive = 'I am so primitive.';
+primitive = 'I am no longer primitive. I am making progress!';
 console.log(primitive);
 
 // Assign the new string 'I am no longer primitive. I am making progress!'

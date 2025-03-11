@@ -13,19 +13,19 @@
 // great I don't need to update the exercise!
 
 // a. Compute (18 + 107) / (5 * 25)
-
+a = (18 + 107) / (5 * 25);
 console.log(a);
 
 // b. Compute the square root of one million.
-
+b = Math.sqrt(1000000);
 console.log(b);
 
 // c. Take the remainder of the division betwen 123 and 9 squared, minus 1.
-
+c = 123 % Math.pow(9,2) -1;
 console.log(c);
 
 // d. Take the integer part of the float number 2.123456789 (need to use Math).
-
+d = Math.floor(2.123456789);
 console.log(d);
 
 // Now compute:
@@ -33,7 +33,7 @@ console.log(a*b*c*d);
 
 // EXERCISE 2. Variable Naming.
 ///////////////////////////////
-
+x = a*b*c*d;
 // Assign the value of the previous computation to variable with a proper name.
 
 // Long Hint. It is really important to name variables with meaningful names.
