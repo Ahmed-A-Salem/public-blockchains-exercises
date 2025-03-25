@@ -45,7 +45,7 @@ const sepoliaProvider = new ethers.JsonRpcProvider(sepoliaUrl);
 // https://faucets.chain.link/sepolia
 // Then check the transaction: with which contract did it interact?
 
-const linkAddress = "";
+const linkAddress = "0x779877A7B0D9E8603169DdbD7836e478b4624789";
 
 // At the address, there is only bytecode. So we need to tell Ethers JS, what
 // methods can be invoked. To do so, we pass the Application Binary Interface
@@ -61,7 +61,9 @@ const linkABI = require('./link_abi.json');
 // https://faucets.chain.link/sepolia
 
 const link = async () => {
-   
+    const contract = new ethers.Contract(linkAddress, linkABI, sepoliaProvider);
+    const linkBalance = await contract.balanceOf("unima.eth");
+    console.log(ethers.formatEther(linkBalance));
     // Your code here!
 };
 

@@ -14,10 +14,14 @@ const path = require('path');
 // Exercise 0. Require the `dotenv` and `ethers` package.
 /////////////////////////////////////////////////////////
 
-// Hint: As you did in file 2_wallets.
+// Hint: As you did in file 1_wallet.
 
 // Your code here!
+pathToDotEnv = path.join(__dirname, '..', '..', '.env');
+// console.log(pathToDotEnv);
+require("dotenv").config({ path: pathToDotEnv });
 
+const ethers = require("ethers");
 
 // Exercise 1. Connect to Mainnet (a.k.a welcome async!).
 /////////////////////////////////////////////////////////
@@ -31,8 +35,7 @@ const path = require('path');
 // 2. async/await pattern (newer notation)
 //
 // Important! You can use promises anywhere in your code, but you can use 
-// "await" only inside an "async" function (update: it would work in newest 
-// ESM Node.JS, but not here ). This makes things a bit more
+// "await" only inside an "async" function. This makes things a bit more
 // complicated, but not too much.
 // 
 // If this is new to you, you can read more about these here:
@@ -48,6 +51,10 @@ const path = require('path');
 
 
 // Your code here!
+const providerKey = process.env.ALCHEMY_KEY;
+
+const mainnetUrl = `${process.env.ALCHEMY_MAINNET_API_URL}${providerKey}`;
+const mainnetProvider = new ethers.JsonRpcProvider(mainnetUrl);
 
 
 // b. Verify that the network's name is "mainnet" and the chain id is 1.
@@ -71,11 +78,8 @@ const path = require('path');
 })();
 
 // However, the async function could also be named, and the result is:
-const network = async () => {
-    
-    // Your code here!
+// Hint: `getNetwork()`.
 
-};
 
 // which you can then call:
 
