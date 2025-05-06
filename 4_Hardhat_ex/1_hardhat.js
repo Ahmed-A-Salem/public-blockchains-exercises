@@ -6,7 +6,10 @@
 
 // a. Require the `dotenv` and `ethers` packages.
 // Hint: As you did multiple times now.
+require('dotenv').config();
+console.log(process.env);
 
+const ethers = require("ethers");
 // Your code here!
 
 
@@ -17,6 +20,8 @@
 // blockchain.
 
 // Your code here!
+const hardhatUrl = "http://127.0.0.1:8545";
+const hardhatProvider = new ethers.JsonRpcProvider(hardhatUrl);
 
 // Exercise 2. Let's query the provider.
 ////////////////////////////////////////
@@ -25,7 +30,13 @@
 // Print to console the network name, chain id, and block number of NUMA.
 
 const networkInfo = async () => {
-   
+    let net = await hardhatProvider.getNetwork();
+    console.log('HH Info:');
+    console.log('Network name: ', net.name);
+    console.log('Network chain id: ', Number(net.chainId));
+
+    let blockNumber = await hardhatProvider.getBlockNumber();
+    console.log('Block number: ', blockNumber);
     // Your code here!
 };
 
